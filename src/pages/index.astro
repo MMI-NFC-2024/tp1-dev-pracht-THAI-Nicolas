@@ -11,7 +11,7 @@ import olympians from '../assets/olympians.json';
 
 <Layout>
 
-  <h1>TP1 - Dev PRACHT</h1>
+  <h1 id="top">TP1 - Dev PRACHT</h1>
 
   <nav>
 	<ul>
@@ -86,6 +86,12 @@ import olympians from '../assets/olympians.json';
 	}}
 	/>
   </section>
+
+  <a href="#top" class="back-to-top" aria-label="Retour en haut">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </Layout>
 
 <style>
@@ -163,6 +169,42 @@ import olympians from '../assets/olympians.json';
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 2rem;
     margin: 0;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: #000000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(135, 139, 143, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .back-to-top:hover {
+    background: #424242;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(79, 80, 80, 0.6);
+  }
+
+  .back-to-top svg {
+    transition: transform 0.3s ease;
+  }
+
+  .back-to-top:hover svg {
+    transform: translateY(-2px);
+  }
+
+  .back-to-top {
+    animation: fadeInUp 0.5s ease-out;
   }
 
 </style>
