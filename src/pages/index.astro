@@ -21,4 +21,18 @@ import cars from '../assets/cars.json';
     }}
   />
   </section> 
+
+  <section>
+	<header>
+		<h2>Analyse méteo</h2>
+	</header>
+	<PlotFigure
+	options={{
+		marks: [
+			Plot.dot(meteo, {x: 'wind', y: 'precipitation', fill: 'weather'}),
+		],
+	}}
+	/>
+  </section>
+
 </Layout>
