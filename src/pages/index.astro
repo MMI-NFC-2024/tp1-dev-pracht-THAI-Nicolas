@@ -6,13 +6,14 @@ import penguins from '../assets/penguins.json';
 import meteo from '../assets/meteo.json';
 import cars from '../assets/cars.json';
 import pizza from '../assets/pizza.json';
+import olympians from '../assets/olympians.json';
 ---
 
 <Layout>
   <h1>TP1 - Dev Pracht</h1>
   <section>
 	<header>
-		<h2>Analyse statistiques de manchots</h2>
+		<h2>Graphique de manchots (longueur nageoire, longeur bec)</h2>
 	</header>
 	 <PlotFigure
     options={{
@@ -25,7 +26,7 @@ import pizza from '../assets/pizza.json';
 
   <section>
 	<header>
-		<h2>Analyse méteo</h2>
+		<h2>Graphique méteo (précipitation, wind)</h2>
 	</header>
 	<PlotFigure
 	options={{
@@ -38,7 +39,7 @@ import pizza from '../assets/pizza.json';
 
   <section>
 	<header>
-		<h2>Analyse de voitures</h2>
+		<h2>Graphique de voitures (poids, puissance)</h2>
 	</header>
 	<PlotFigure
 	options={{
@@ -51,12 +52,25 @@ import pizza from '../assets/pizza.json';
 
   <section>
 	<header>
-		<h2>Analyse Commande Pizza</h2>
+		<h2>Graphique de commandes de pizzas (commandes, prix)</h2>
 	</header>
 	<PlotFigure
 	options={{
 		marks: [
 			Plot.dot(pizza, {x: 'price', y: 'orders', fill: 'name'}),
+		],
+	}}
+	/>
+  </section>
+
+  <section>
+	<header>
+		<h2>Analyse Olympians (taille, poids)</h2>
+	</header>
+	<PlotFigure
+	options={{
+		marks: [
+			Plot.dot(olympians, {x: 'weight', y: 'height', fill: 'sex'}),
 		],
 	}}
 	/>
