@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PlotFigure from '../components/PlotFigure.astro';
+import * as Plot from "@observablehq/plot";
+import penguins from '../assets/penguins.json';
+import meteo from '../assets/meteo.json';
+import cars from '../assets/cars.json';
+---
+
+<Layout>
+  <h1>TP1 - Dev Pracht</h1>
+  <section>
+	<header>
+		<h2>Analyse statistiques de manchots</h2>
+	</header>
+	 <PlotFigure
+    options={{
+      marks: [
+        Plot.dot(penguins, {x: 'culmen_length_mm', y: 'flipper_length_mm', fill: 'species'}),
+      ],
+    }}
+  />
+  </section> 
+</Layout>
