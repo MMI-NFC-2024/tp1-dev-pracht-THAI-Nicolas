@@ -10,8 +10,19 @@ import olympians from '../assets/olympians.json';
 ---
 
 <Layout>
-  <h1>TP1 - Dev Pracht</h1>
-  <section>
+
+  <h1>TP1 - Dev PRACHT</h1>
+
+  <nav>
+	<ul>
+		<li><a href="#manchots">Graphique Manchots</a></li>
+		<li><a href="#meteo">Graphique Méteo</a></li>
+		<li><a href="#voitures">Graphique Voitures</a></li>
+		<li><a href="#pizzas">Graphique Pizzas</a></li>
+		<li><a href="#olympians">Graphique Olympians</a></li>
+	</ul>
+  </nav>
+  <section id="manchots">
 	<header>
 		<h2>Graphique de manchots (longueur nageoire, longeur bec)</h2>
 	</header>
@@ -24,7 +35,7 @@ import olympians from '../assets/olympians.json';
   />
   </section> 
 
-  <section>
+  <section id="meteo">
 	<header>
 		<h2>Graphique méteo (précipitation, wind)</h2>
 	</header>
@@ -37,7 +48,7 @@ import olympians from '../assets/olympians.json';
 	/>
   </section>
 
-  <section>
+  <section id="voitures">
 	<header>
 		<h2>Graphique de voitures (poids, puissance)</h2>
 	</header>
@@ -50,7 +61,7 @@ import olympians from '../assets/olympians.json';
 	/>
   </section>
 
-  <section>
+  <section id="pizzas">
 	<header>
 		<h2>Graphique de commandes de pizzas (commandes, prix)</h2>
 	</header>
@@ -63,7 +74,7 @@ import olympians from '../assets/olympians.json';
 	/>
   </section>
 
-  <section>
+  <section id="olympians">
 	<header>
 		<h2>Analyse Olympians (taille, poids)</h2>
 	</header>
@@ -76,3 +87,82 @@ import olympians from '../assets/olympians.json';
 	/>
   </section>
 </Layout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  nav {
+    background: #f8f9fa;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  nav li a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+
+  nav li a:hover {
+    background: black;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  section {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin : auto;
+  }
+
+  section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  h2 {
+    color: #343a40;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+  }
+
+  :global(body) {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2rem;
+    margin: 0;
+  }
+
+</style>
