@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PlotFigure from '../components/PlotFigure.astro';
+import Card from '../components/Card.astro';
 import * as Plot from "@observablehq/plot";
 import penguins from '../assets/penguins.json';
 import meteo from '../assets/meteo.json';
@@ -26,70 +27,55 @@ import olympians from '../assets/olympians.json';
 
 <div>
 
-  <section id="manchots">
-	<header>
-		<h2>Graphique de manchots (longueur nageoire, longeur bec)</h2>
-	</header>
-	 <PlotFigure
-    options={{
-      marks: [
-        Plot.dot(penguins, {x: 'culmen_length_mm', y: 'flipper_length_mm', fill: 'species'}),
-      ],
-    }}
-  />
-  </section> 
+  <Card title="Graphique de manchots (longueur nageoire, longueur bec)" id="manchots">
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.dot(penguins, {x: 'culmen_length_mm', y: 'flipper_length_mm', fill: 'species'}),
+        ],
+      }}
+    />
+  </Card>
 
-  <section id="meteo">
-	<header>
-		<h2>Graphique méteo (précipitation, wind)</h2>
-	</header>
-	<PlotFigure
-	options={{
-		marks: [
-			Plot.dot(meteo, {x: 'wind', y: 'precipitation', fill: 'weather'}),
-		],
-	}}
-	/>
-  </section>
+  <Card title="Graphique méteo (précipitation, wind)" id="meteo">
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.dot(meteo, {x: 'wind', y: 'precipitation', fill: 'weather'}),
+        ],
+      }}
+    />
+  </Card>
 
-  <section id="voitures">
-	<header>
-		<h2>Graphique de voitures (poids, puissance)</h2>
-	</header>
-	<PlotFigure
-	options={{
-		marks: [
-			Plot.dot(cars, {x: 'power (hp)', y: 'weight (lb)', fill: 'name'}),
-		],
-	}}
-	/>
-  </section>
+  <Card title="Graphique de voitures (poids, puissance)" id="voitures">
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.dot(cars, {x: 'power (hp)', y: 'weight (lb)', fill: 'name'}),
+        ],
+      }}
+    />
+  </Card>
 
-  <section id="pizzas">
-	<header>
-		<h2>Graphique de commandes de pizzas (commandes, prix)</h2>
-	</header>
-	<PlotFigure
-	options={{
-		marks: [
-			Plot.dot(pizza, {x: 'price', y: 'orders', fill: 'name'}),
-		],
-	}}
-	/>
-  </section>
+  <Card title="Graphique de commandes de pizzas (commandes, prix)" id="pizzas">
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.dot(pizza, {x: 'price', y: 'orders', fill: 'name'}),
+        ],
+      }}
+    />
+  </Card>
 
-  <section id="olympians">
-	<header>
-		<h2>Analyse Olympians (taille, poids)</h2>
-	</header>
-	<PlotFigure
-	options={{
-		marks: [
-			Plot.dot(olympians, {x: 'weight', y: 'height', fill: 'sex'}),
-		],
-	}}
-	/>
-  </section>
+  <Card title="Analyse Olympians (taille, poids)" id="olympians">
+    <PlotFigure
+      options={{
+        marks: [
+          Plot.dot(olympians, {x: 'weight', y: 'height', fill: 'sex'}),
+        ],
+      }}
+    />
+  </Card>
 
 </div>
 
@@ -142,33 +128,6 @@ import olympians from '../assets/olympians.json';
     background: black;
     color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-
-  section {
-    padding: 2rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 50%;
-	margin : auto;
-  }
-
-  section:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  }
-
-  h2 {
-    color: #343a40;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e9ecef;
   }
 
   :global(body) {
